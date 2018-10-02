@@ -28,6 +28,12 @@ describe DockingStation do
       # we want to release the bike we docked
       expect(subject.release_bike).to eq bike
     end
+    it 'raises an error when there are no bikes available' do
+      # Let's not dock a bike first:
+      # remember subject == DockingStation.new
+      expect { subject.release_bike }.to raise_error 'No bikes available'
+    end
+
   end
 
 end
