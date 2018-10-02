@@ -12,6 +12,10 @@ describe DockingStation do
   it 'responds to dock with an argument' do
     is_expected.to respond_to(:dock).with(1).argument
   end
+  it 'It can dock a bike' do
+    bike = Bike.new
+    expect(subject.dock(bike)).to eq bike
+  end
 end
 
     
